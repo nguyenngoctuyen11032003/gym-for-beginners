@@ -2,6 +2,7 @@
 
 import { useState, useSyncExternalStore } from "react";
 import { ExerciseGrid } from "@/src/components/workout/exercise-grid";
+import { ExerciseDetailDialog } from "@/src/components/workout/exercise-detail-dialog";
 import { WeeklyDaySelector } from "@/src/components/workout/weekly-day-selector";
 import { WorkoutDayHeader } from "@/src/components/workout/workout-day-header";
 import { getCurrentWorkoutDay } from "@/src/lib/day-utils";
@@ -23,9 +24,22 @@ export function WorkoutPlanner({ plan, initialDayId, initialTodayId }: WorkoutPl
     () => initialTodayId,
   );
   const [manualDayId, setManualDayId] = useState<string | null>(null);
-  const [, setSelectedExerciseId] = useState<string | null>(null);
+  const [selectedExerciseId, setSelectedExerciseId] = useState<string | null>(null);
+  const [detailOpen, setDetailOpen] = useState(false);
   const selectedDayId = manualDayId ?? (hydrated ? localTodayId : initialDayId);
   const selectedDay = plan.find((day) => day.id === selectedDayId) ?? plan[0];
+  const selectedExercise = selectedDay.exercises.find((exercise) => exercise.id === selectedExerciseId) ?? null;
+
+  const selectDay = (dayId: string) => {
+    setDetailOpen(false);
+    setSelectedExerciseId(null);
+    setManualDayId(dayId);
+  };
+
+  const selectExercise = (exerciseId: string) => {
+    setSelectedExerciseId(exerciseId);
+    setDetailOpen(true);
+  };
 
   if (!hydrated) {
     return (
@@ -38,11 +52,12 @@ export function WorkoutPlanner({ plan, initialDayId, initialTodayId }: WorkoutPl
 
   return (
     <section className="pt-7 sm:pt-9">
-      <WeeklyDaySelector onSelectDay={setManualDayId} plan={plan} selectedDayId={selectedDay.id} todayId={localTodayId} />
+      <WeeklyDaySelector onSelectDay={selectDay} plan={plan} selectedDayId={selectedDay.id} todayId={localTodayId} />
       <WorkoutDayHeader day={selectedDay} />
       {!selectedDay.isRestDay && (
-        <ExerciseGrid exercises={selectedDay.exercises} onSelectExercise={setSelectedExerciseId} />
+        <ExerciseGrid exercises={selectedDay.exercises} onSelectExercise={selectExercise} />
       )}
+      <ExerciseDetailDialog exercise={selectedExercise} onOpenChange={setDetailOpen} open={detailOpen} />
     </section>
   );
 }
