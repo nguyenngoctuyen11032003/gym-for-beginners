@@ -124,7 +124,7 @@ export const workoutPlan: WorkoutDay[] = [
     description: "Ưu tiên vai ổn định, chuyển động mượt và không khóa khớp.",
     isRestDay: false,
     exercises: [
-      exercise("overhead-press", "Overhead Press — OHP", "Đẩy vai thanh đòn", ["Vai"], 5, "14 / 12 / 10 / 8 / 6"),
+      exercise("overhead-press", "Overhead Press (OHP)", "Đẩy vai thanh đòn", ["Vai"], 5, "14 / 12 / 10 / 8 / 6"),
       exercise("dumbbell-shoulder-press", "Dumbbell Shoulder Press", "Đẩy vai tạ đơn", ["Vai"], 4, "14 / 12 / 10 / 8"),
       exercise("dumbbell-front-raise-friday", "Dumbbell Front Raise", "Nâng tạ trước", ["Vai trước"], 4, "15 mỗi set"),
       exercise("dumbbell-lateral-raise-friday", "Dumbbell Lateral Raise", "Nâng tạ ngang", ["Vai giữa"], 4, "15 mỗi set"),
