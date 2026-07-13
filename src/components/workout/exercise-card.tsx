@@ -30,7 +30,7 @@ export function ExerciseCard({ exercise, index, onSelect }: ExerciseCardProps) {
             <Dumbbell aria-hidden="true" className="size-4" strokeWidth={1.8} />
           </span>
         </div>
-        <span className={hasVideo ? "inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/[0.08] px-2.5 py-1 text-[10px] font-semibold text-accent" : "inline-flex items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.025] px-2.5 py-1 text-[10px] font-medium text-muted-foreground"}>
+        <span className={hasVideo ? "inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/[0.08] px-2.5 py-1 text-[11px] font-semibold text-accent" : "inline-flex items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.025] px-2.5 py-1 text-[11px] font-medium text-muted-foreground"}>
           {hasVideo ? <Video aria-hidden="true" className="size-3" strokeWidth={1.8} /> : <VideoOff aria-hidden="true" className="size-3" strokeWidth={1.8} />}
           {hasVideo ? "Có video" : "Chưa có video"}
         </span>
@@ -46,11 +46,11 @@ export function ExerciseCard({ exercise, index, onSelect }: ExerciseCardProps) {
 
       <div className="mt-5 grid w-full grid-cols-[88px_minmax(0,1fr)] gap-2 rounded-2xl border border-white/[0.07] bg-black/15 p-3">
         <div>
-          <p className="text-[10px] font-medium text-muted-foreground">Số set</p>
+          <p className="text-[11px] font-medium text-muted-foreground">Số set</p>
           <p className="mt-1 font-mono text-base font-semibold text-foreground">{exercise.sets} set</p>
         </div>
         <div className="border-l border-white/[0.08] pl-3">
-          <p className="text-[10px] font-medium text-muted-foreground">Số rep</p>
+          <p className="text-[11px] font-medium text-muted-foreground">Số rep</p>
           <p className="mt-1 font-mono text-sm font-semibold leading-5 text-foreground">{exercise.reps}</p>
         </div>
       </div>

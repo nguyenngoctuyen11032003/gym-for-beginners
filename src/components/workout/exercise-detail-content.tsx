@@ -52,11 +52,11 @@ export function ExerciseDetailContent({ exercise, variant, onClose }: ExerciseDe
 
           <div className="mt-5 grid grid-cols-2 gap-2.5">
             <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-3.5">
-              <p className="text-[11px] text-muted-foreground">Số set</p>
+              <p className="text-xs text-muted-foreground">Số set</p>
               <p className="mt-1 font-mono text-xl font-semibold text-foreground">{exercise.sets}</p>
             </div>
             <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-3.5">
-              <p className="text-[11px] text-muted-foreground">Số rep</p>
+              <p className="text-xs text-muted-foreground">Số rep</p>
               <p className="mt-1 font-mono text-sm font-semibold leading-6 text-foreground">{exercise.reps}</p>
             </div>
           </div>

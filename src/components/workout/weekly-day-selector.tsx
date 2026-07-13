@@ -43,9 +43,9 @@ export function WeeklyDaySelector({ plan, selectedDayId, todayId, onSelectDay }:
               {day.isRestDay ? "Phục hồi" : day.muscleGroups.join(" · ")}
             </p>
             <div className="mt-3 flex min-h-5 items-center gap-1.5">
-              {isToday && <span className="rounded-full border border-white/[0.1] bg-white/[0.055] px-2 py-0.5 text-[10px] font-semibold text-foreground">Hôm nay</span>}
-              {isSelected && <span className="text-[10px] font-semibold text-accent">Đang chọn</span>}
-              {day.isRestDay && !isToday && !isSelected && <span className="text-[10px] font-medium text-muted-foreground">Ngày nghỉ</span>}
+              {isToday && <span className="rounded-full border border-white/[0.1] bg-white/[0.055] px-2 py-0.5 text-[11px] font-semibold text-foreground">Hôm nay</span>}
+              {isSelected && <span className="text-[11px] font-semibold text-accent">Đang chọn</span>}
+              {day.isRestDay && !isToday && !isSelected && <span className="text-[11px] font-medium text-muted-foreground">Ngày nghỉ</span>}
             </div>
           </button>
         );

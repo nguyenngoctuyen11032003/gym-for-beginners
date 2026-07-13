@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useSyncExternalStore } from "react";
+import { useEffect, useState } from "react";
 import { ExerciseGrid } from "@/src/components/workout/exercise-grid";
 import { ExerciseDetailDialog } from "@/src/components/workout/exercise-detail-dialog";
 import { RestDayCard } from "@/src/components/workout/rest-day-card";
@@ -15,26 +15,34 @@ interface WorkoutPlannerProps {
   initialTodayId: string;
 }
 
-const subscribeToNothing = () => () => {};
-
 export function WorkoutPlanner({ plan, initialDayId, initialTodayId }: WorkoutPlannerProps) {
-  const hydrated = useSyncExternalStore(subscribeToNothing, () => true, () => false);
-  const localTodayId = useSyncExternalStore(
-    subscribeToNothing,
-    () => getCurrentWorkoutDay(plan)?.id ?? initialTodayId,
-    () => initialTodayId,
-  );
-  const [manualDayId, setManualDayId] = useState<string | null>(null);
+  const [hasMounted, setHasMounted] = useState(false);
+  const [todayId, setTodayId] = useState(initialTodayId);
+  const [selectedDayId, setSelectedDayId] = useState(initialDayId);
   const [selectedExerciseId, setSelectedExerciseId] = useState<string | null>(null);
   const [detailOpen, setDetailOpen] = useState(false);
-  const selectedDayId = manualDayId ?? (hydrated ? localTodayId : initialDayId);
   const selectedDay = plan.find((day) => day.id === selectedDayId) ?? plan[0];
   const selectedExercise = selectedDay.exercises.find((exercise) => exercise.id === selectedExerciseId) ?? null;
+
+  useEffect(() => {
+    const timeoutId = window.setTimeout(() => {
+      const localToday = getCurrentWorkoutDay(plan);
+
+      if (localToday) {
+        setTodayId(localToday.id);
+        setSelectedDayId(localToday.id);
+      }
+
+      setHasMounted(true);
+    }, 0);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [plan]);
 
   const selectDay = (dayId: string) => {
     setDetailOpen(false);
     setSelectedExerciseId(null);
-    setManualDayId(dayId);
+    setSelectedDayId(dayId);
   };
 
   const selectExercise = (exerciseId: string) => {
@@ -42,7 +50,7 @@ export function WorkoutPlanner({ plan, initialDayId, initialTodayId }: WorkoutPl
     setDetailOpen(true);
   };
 
-  if (!hydrated) {
+  if (!hasMounted) {
     return (
       <section aria-busy="true" aria-label="Đang xác định lịch hôm nay" className="py-8">
         <div className="h-[118px] animate-pulse rounded-2xl border border-white/[0.06] bg-card" />
@@ -53,7 +61,7 @@ export function WorkoutPlanner({ plan, initialDayId, initialTodayId }: WorkoutPl
 
   return (
     <section className="pt-7 sm:pt-9">
-      <WeeklyDaySelector onSelectDay={selectDay} plan={plan} selectedDayId={selectedDay.id} todayId={localTodayId} />
+      <WeeklyDaySelector onSelectDay={selectDay} plan={plan} selectedDayId={selectedDay.id} todayId={todayId} />
       <WorkoutDayHeader day={selectedDay} />
       {!selectedDay.isRestDay && (
         <ExerciseGrid exercises={selectedDay.exercises} onSelectExercise={selectExercise} />

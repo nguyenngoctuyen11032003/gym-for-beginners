@@ -21,7 +21,7 @@ export function WorkoutHero() {
           <Dumbbell aria-hidden="true" className="size-3.5" strokeWidth={1.8} />
           Chương trình 12 tuần
         </div>
-        <h1 className="max-w-[14ch] text-[clamp(2rem,8vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.055em] text-foreground">
+        <h1 className="max-w-[14ch] text-[clamp(2rem,8vw,3.25rem)] font-semibold leading-[0.98] tracking-[-0.04em] text-foreground">
           Lịch tập trong tuần
         </h1>
         <p className="mt-3 max-w-[42ch] text-sm leading-6 text-muted-foreground sm:text-base">
@@ -36,7 +36,7 @@ export function WorkoutHero() {
             className="min-w-0 rounded-2xl border border-white/[0.08] bg-card px-3.5 py-3.5 shadow-[inset_0_1px_0_rgb(255_255_255/0.035)] sm:px-4 sm:py-4"
           >
             <Icon aria-hidden="true" className="mb-4 size-4 text-accent" strokeWidth={1.8} />
-            <p className="text-[11px] leading-4 text-muted-foreground sm:text-xs">{label}</p>
+            <p className="text-xs leading-4 text-muted-foreground">{label}</p>
             <p className="mt-0.5 truncate text-sm font-semibold tracking-[-0.02em] text-foreground sm:text-base">
               {value}
             </p>
