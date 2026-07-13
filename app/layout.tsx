@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   title: "Gym Training Plan | Giáo án tập 12 tuần",
   description:
     "Website xem lịch tập gym trong tuần, danh sách bài tập và video hướng dẫn động tác.",
+  icons: {
+    icon: [{ url: "/image/logo.png", type: "image/png" }],
+    shortcut: ["/image/logo.png"],
+    apple: [{ url: "/image/logo.png", type: "image/png" }],
+  },
   openGraph: {
     title: "Gym Training Plan | Giáo án tập 12 tuần",
     description: "Lịch tập gym trong tuần và video hướng dẫn động tác.",

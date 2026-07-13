@@ -1,4 +1,4 @@
-import { Dumbbell } from "lucide-react";
+import Image from "next/image";
 import { PageContainer } from "@/src/components/shared/page-container";
 
 export function AppHeader() {
@@ -6,9 +6,15 @@ export function AppHeader() {
     <header className="border-b border-white/[0.07] bg-background/94">
       <PageContainer className="flex h-[68px] items-center justify-between">
         <div className="flex min-w-0 items-center gap-3">
-          <div className="flex size-10 shrink-0 items-center justify-center rounded-2xl border border-accent/25 bg-accent/10 text-accent shadow-[inset_0_1px_0_rgb(255_255_255/0.08)]">
-            <Dumbbell aria-hidden="true" className="size-5" strokeWidth={1.8} />
-          </div>
+          <Image
+            alt=""
+            className="size-10 shrink-0 rounded-[14px] object-cover shadow-[0_0_18px_rgb(197_244_103/0.08)]"
+            height={40}
+            priority
+            sizes="40px"
+            src="/image/logo.png"
+            width={40}
+          />
           <div className="min-w-0">
             <p className="truncate text-[15px] font-semibold tracking-[-0.02em] text-foreground">
               Gym Training Plan
