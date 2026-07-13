@@ -3,6 +3,7 @@
 import { useState, useSyncExternalStore } from "react";
 import { ExerciseGrid } from "@/src/components/workout/exercise-grid";
 import { ExerciseDetailDialog } from "@/src/components/workout/exercise-detail-dialog";
+import { RestDayCard } from "@/src/components/workout/rest-day-card";
 import { WeeklyDaySelector } from "@/src/components/workout/weekly-day-selector";
 import { WorkoutDayHeader } from "@/src/components/workout/workout-day-header";
 import { getCurrentWorkoutDay } from "@/src/lib/day-utils";
@@ -56,6 +57,9 @@ export function WorkoutPlanner({ plan, initialDayId, initialTodayId }: WorkoutPl
       <WorkoutDayHeader day={selectedDay} />
       {!selectedDay.isRestDay && (
         <ExerciseGrid exercises={selectedDay.exercises} onSelectExercise={selectExercise} />
+      )}
+      {selectedDay.isRestDay && (
+        <RestDayCard day={selectedDay} onSelectDay={selectDay} plan={plan} />
       )}
       <ExerciseDetailDialog exercise={selectedExercise} onOpenChange={setDetailOpen} open={detailOpen} />
     </section>
