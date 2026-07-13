@@ -19,12 +19,12 @@ export function ExerciseVideo({ video }: { video: ExerciseVideoType }) {
   return (
     <div
       className={cn(
-        "relative mx-auto overflow-hidden rounded-[20px] border border-white/[0.1] bg-black",
+        "relative mx-auto overflow-hidden rounded-[20px] border border-white/[0.1] bg-black shadow-[0_18px_54px_rgb(0_0_0/0.34),0_0_32px_rgb(197_244_103/0.045),inset_0_1px_0_rgb(255_255_255/0.04)]",
         portrait ? "aspect-[9/16]" : "aspect-video w-full",
       )}
       style={portrait ? { width: "min(100%, calc(58dvh * 9 / 16))" } : undefined}
     >
-      {!loaded && <Skeleton className="absolute inset-0 size-full rounded-none bg-white/[0.055]" />}
+      {!loaded && <Skeleton className="soft-shimmer absolute inset-0 size-full rounded-none" />}
       <iframe
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen

@@ -25,6 +25,8 @@ describe("ExerciseCard", () => {
     render(<ExerciseCard exercise={exercise} index={1} onSelect={onSelect} />);
 
     const card = screen.getByRole("button", { name: /Incline Bench Press/i });
+    expect(card).toHaveClass("premium-card");
+    expect(card).toHaveClass("lift-press");
     expect(card).toHaveTextContent("4 set");
     expect(card).toHaveTextContent("14 / 12 / 10 / 8");
     expect(card).toHaveTextContent("Có video");

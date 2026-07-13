@@ -17,7 +17,7 @@ export function ExerciseCard({ exercise, index, onSelect }: ExerciseCardProps) {
   return (
     <button
       aria-label={`Xem hướng dẫn ${exercise.name}`}
-      className="group flex min-h-[238px] w-full flex-col rounded-[20px] border border-white/[0.08] bg-card p-4 text-left shadow-[inset_0_1px_0_rgb(255_255_255/0.035)] transition-[transform,border-color,background-color,box-shadow] duration-200 hover:border-white/[0.16] hover:bg-card-elevated hover:shadow-[0_14px_42px_rgb(4_8_3/0.28),inset_0_1px_0_rgb(255_255_255/0.05)] active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:p-5"
+      className="premium-card lift-press group flex min-h-[238px] w-full flex-col overflow-hidden rounded-[20px] border border-white/[0.08] bg-card p-4 text-left shadow-[0_10px_34px_rgb(0_0_0/0.18),inset_0_1px_0_rgb(255_255_255/0.035)] transition-[transform,border-color,background-color,box-shadow] duration-200 ease-out hover:-translate-y-0.5 hover:border-white/[0.16] hover:bg-card-elevated hover:shadow-[0_18px_52px_rgb(0_0_0/0.34),0_0_28px_rgb(197_244_103/0.045),inset_0_1px_0_rgb(255_255_255/0.05)] active:translate-y-0 active:scale-[0.985] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:p-5"
       onClick={() => onSelect(exercise.id)}
       type="button"
     >
@@ -26,11 +26,11 @@ export function ExerciseCard({ exercise, index, onSelect }: ExerciseCardProps) {
           <span className="font-mono text-xs font-medium text-muted-foreground">
             {String(index).padStart(2, "0")}
           </span>
-          <span className="flex size-9 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.035] text-muted-foreground transition-colors duration-200 group-hover:text-accent">
+          <span className="flex size-9 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.035] text-muted-foreground shadow-[inset_0_1px_0_rgb(255_255_255/0.04)] transition-[color,background-color,border-color,transform] duration-200 group-hover:-rotate-3 group-hover:border-accent/20 group-hover:bg-accent/[0.055] group-hover:text-accent">
             <Dumbbell aria-hidden="true" className="size-4" strokeWidth={1.8} />
           </span>
         </div>
-        <span className={hasVideo ? "inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/[0.08] px-2.5 py-1 text-[11px] font-semibold text-accent" : "inline-flex items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.025] px-2.5 py-1 text-[11px] font-medium text-muted-foreground"}>
+        <span className={hasVideo ? "inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/[0.08] px-2.5 py-1 text-[11px] font-semibold text-accent shadow-[0_0_16px_rgb(197_244_103/0.06)]" : "inline-flex items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.025] px-2.5 py-1 text-[11px] font-medium text-muted-foreground"}>
           {hasVideo ? <Video aria-hidden="true" className="size-3" strokeWidth={1.8} /> : <VideoOff aria-hidden="true" className="size-3" strokeWidth={1.8} />}
           {hasVideo ? "Có video" : "Chưa có video"}
         </span>
@@ -44,7 +44,7 @@ export function ExerciseCard({ exercise, index, onSelect }: ExerciseCardProps) {
         </div>
       </div>
 
-      <div className="mt-5 grid w-full grid-cols-[88px_minmax(0,1fr)] gap-2 rounded-2xl border border-white/[0.07] bg-black/15 p-3">
+      <div className="mt-5 grid w-full grid-cols-[88px_minmax(0,1fr)] gap-2 rounded-2xl border border-white/[0.07] bg-black/20 p-3 shadow-[inset_0_1px_0_rgb(255_255_255/0.035)]">
         <div>
           <p className="text-[11px] font-medium text-muted-foreground">Số set</p>
           <p className="mt-1 font-mono text-base font-semibold text-foreground">{exercise.sets} set</p>

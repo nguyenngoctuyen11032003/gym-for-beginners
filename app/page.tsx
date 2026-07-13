@@ -7,7 +7,7 @@ import { workoutPlan } from "@/src/data/workout-plan";
 
 export default function Home() {
   return (
-    <div className="min-h-dvh bg-background text-foreground">
+    <div className="ambient-shell min-h-dvh text-foreground">
       <AppHeader />
       <main>
         <PageContainer>

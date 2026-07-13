@@ -22,7 +22,7 @@ export function ExerciseDetailContent({ exercise, variant, onClose }: ExerciseDe
 
   return (
     <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
-      <div className="sticky top-0 z-[1] flex items-start justify-between gap-4 border-b border-white/[0.08] bg-card-elevated/95 px-4 py-3.5 backdrop-blur-md sm:px-6">
+      <div className="sticky top-0 z-[1] flex items-start justify-between gap-4 border-b border-white/[0.08] bg-card-elevated/88 px-4 py-3.5 shadow-[0_10px_32px_rgb(0_0_0/0.22)] backdrop-blur-xl sm:px-6">
         <div className="min-w-0 py-1">
           <Title className="truncate text-lg font-semibold tracking-[-0.035em] text-foreground sm:text-xl">
             {exercise.name}
@@ -33,7 +33,7 @@ export function ExerciseDetailContent({ exercise, variant, onClose }: ExerciseDe
         </div>
         <Button
           aria-label="Đóng chi tiết bài tập"
-          className="size-11 shrink-0 rounded-2xl border border-white/[0.1] bg-white/[0.04] p-0 text-foreground shadow-none hover:bg-white/[0.08] hover:text-foreground"
+          className="size-11 shrink-0 rounded-2xl border border-white/[0.1] bg-white/[0.04] p-0 text-foreground shadow-none transition-[transform,background-color,border-color] duration-200 hover:-translate-y-0.5 hover:border-white/[0.16] hover:bg-white/[0.08] hover:text-foreground active:translate-y-0 active:scale-[0.96]"
           onClick={onClose}
           type="button"
           variant="ghost"
@@ -51,18 +51,18 @@ export function ExerciseDetailContent({ exercise, variant, onClose }: ExerciseDe
           {exercise.description && <p className="mt-4 text-sm leading-6 text-muted-foreground">{exercise.description}</p>}
 
           <div className="mt-5 grid grid-cols-2 gap-2.5">
-            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-3.5">
+            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-3.5 shadow-[inset_0_1px_0_rgb(255_255_255/0.035)]">
               <p className="text-xs text-muted-foreground">Số set</p>
               <p className="mt-1 font-mono text-xl font-semibold text-foreground">{exercise.sets}</p>
             </div>
-            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-3.5">
+            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-3.5 shadow-[inset_0_1px_0_rgb(255_255_255/0.035)]">
               <p className="text-xs text-muted-foreground">Số rep</p>
               <p className="mt-1 font-mono text-sm font-semibold leading-6 text-foreground">{exercise.reps}</p>
             </div>
           </div>
 
           {exercise.note && (
-            <div className="mt-4 rounded-2xl border border-accent/15 bg-accent/[0.055] p-4">
+            <div className="mt-4 rounded-2xl border border-accent/15 bg-accent/[0.055] p-4 shadow-[0_0_26px_rgb(197_244_103/0.045),inset_0_1px_0_rgb(255_255_255/0.035)]">
               <p className="text-xs font-semibold text-accent">Ghi chú</p>
               <p className="mt-1.5 text-sm leading-6 text-foreground/85">{exercise.note}</p>
             </div>
