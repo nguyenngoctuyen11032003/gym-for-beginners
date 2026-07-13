@@ -5,6 +5,44 @@ const noVideo = (): Exercise["video"] => ({
   aspectRatio: "16:9",
 });
 
+const videos = {
+  benchPress: {
+    embedUrl: "https://www.youtube.com/embed/XjrsqShr-Ic",
+    title: "✅ Bench Press LIKE THIS!",
+    aspectRatio: "9:16",
+  },
+  inclineBenchPress: {
+    embedUrl: "https://www.youtube.com/embed/8fXfwG4ftaQ",
+    title: "The PERFECT Incline Dumbbell Chest Press",
+    aspectRatio: "9:16",
+  },
+  dip: {
+    embedUrl: "https://www.youtube.com/embed/eicOUO9WaJc",
+    title: "Dips - KNOW THE DIFFERENCE!",
+    aspectRatio: "9:16",
+  },
+  dumbbellFrontRaise: {
+    embedUrl: "https://www.youtube.com/embed/9ThlTL25DH8",
+    title: "Build 3D Shoulders (Dumbbells Only)",
+    aspectRatio: "9:16",
+  },
+  dumbbellLateralRaise: {
+    embedUrl: "https://www.youtube.com/embed/Kl3LEzQ5Zqs",
+    title: "The Perfect Lateral Raise (DO THIS!)",
+    aspectRatio: "9:16",
+  },
+  dumbbellReverseRaise: {
+    embedUrl: "https://www.youtube.com/embed/LsT-bR_zxLo",
+    title: "The PERFECT Dumbbell Rear Delt Fly (DO THIS!)",
+    aspectRatio: "9:16",
+  },
+  cableTricepPushdown: {
+    embedUrl: "https://www.youtube.com/embed/1FjkhpZsaxc",
+    title: "The Perfect Triceps Pushdown (DO THIS!)",
+    aspectRatio: "9:16",
+  },
+} satisfies Record<string, Exercise["video"]>;
+
 const exercise = (
   id: string,
   name: string,
@@ -39,22 +77,28 @@ export const workoutPlan: WorkoutDay[] = [
     exercises: [
       exercise("bench-press", "Bench Press", "Đẩy ngực thanh đòn", ["Ngực"], 5, "14 / 12 / 10 / 8 / 6", {
         instructions: ["Giữ bả vai ổn định và kiểm soát thanh đòn trong toàn bộ chuyển động."],
+        video: videos.benchPress,
       }),
       exercise("incline-bench-press", "Incline Bench Press", "Đẩy ngực dốc lên", ["Ngực trên"], 4, "14 / 12 / 10 / 8", {
         instructions: ["Giữ ngực mở, cổ tay thẳng và hạ tạ có kiểm soát."],
-        video: {
-          embedUrl: "https://www.youtube.com/embed/8fXfwG4ftaQ",
-          title: "The PERFECT Incline Dumbbell Chest Press",
-          aspectRatio: "9:16",
-        },
+        video: videos.inclineBenchPress,
       }),
       exercise("dip", "Dip", "Xà kép", ["Ngực", "Tay sau"], 3, "Tối đa", {
         note: "Mục tiêu khoảng 8 rep mỗi set nếu thể lực cho phép.",
+        video: videos.dip,
       }),
-      exercise("dumbbell-front-raise", "Dumbbell Front Raise", "Nâng tạ trước", ["Vai trước"], 3, "15 mỗi set"),
-      exercise("dumbbell-lateral-raise", "Dumbbell Lateral Raise", "Nâng tạ ngang", ["Vai giữa"], 3, "15 mỗi set"),
-      exercise("dumbbell-reverse-raise", "Dumbbell Reverse Raise", "Nâng tạ vai sau", ["Vai sau"], 3, "15 mỗi set"),
-      exercise("cable-tricep-pushdown", "Cable Tricep Pushdown", "Kéo cáp tay sau", ["Tay sau"], 4, "15 mỗi set"),
+      exercise("dumbbell-front-raise", "Dumbbell Front Raise", "Nâng tạ trước", ["Vai trước"], 3, "15 mỗi set", {
+        video: videos.dumbbellFrontRaise,
+      }),
+      exercise("dumbbell-lateral-raise", "Dumbbell Lateral Raise", "Nâng tạ ngang", ["Vai giữa"], 3, "15 mỗi set", {
+        video: videos.dumbbellLateralRaise,
+      }),
+      exercise("dumbbell-reverse-raise", "Dumbbell Reverse Raise", "Nâng tạ vai sau", ["Vai sau"], 3, "15 mỗi set", {
+        video: videos.dumbbellReverseRaise,
+      }),
+      exercise("cable-tricep-pushdown", "Cable Tricep Pushdown", "Kéo cáp tay sau", ["Tay sau"], 4, "15 mỗi set", {
+        video: videos.cableTricepPushdown,
+      }),
     ],
   },
   {
@@ -126,9 +170,15 @@ export const workoutPlan: WorkoutDay[] = [
     exercises: [
       exercise("overhead-press", "Overhead Press (OHP)", "Đẩy vai thanh đòn", ["Vai"], 5, "14 / 12 / 10 / 8 / 6"),
       exercise("dumbbell-shoulder-press", "Dumbbell Shoulder Press", "Đẩy vai tạ đơn", ["Vai"], 4, "14 / 12 / 10 / 8"),
-      exercise("dumbbell-front-raise-friday", "Dumbbell Front Raise", "Nâng tạ trước", ["Vai trước"], 4, "15 mỗi set"),
-      exercise("dumbbell-lateral-raise-friday", "Dumbbell Lateral Raise", "Nâng tạ ngang", ["Vai giữa"], 4, "15 mỗi set"),
-      exercise("dumbbell-reverse-raise-friday", "Dumbbell Reverse Raise", "Nâng tạ vai sau", ["Vai sau"], 4, "15 mỗi set"),
+      exercise("dumbbell-front-raise-friday", "Dumbbell Front Raise", "Nâng tạ trước", ["Vai trước"], 4, "15 mỗi set", {
+        video: videos.dumbbellFrontRaise,
+      }),
+      exercise("dumbbell-lateral-raise-friday", "Dumbbell Lateral Raise", "Nâng tạ ngang", ["Vai giữa"], 4, "15 mỗi set", {
+        video: videos.dumbbellLateralRaise,
+      }),
+      exercise("dumbbell-reverse-raise-friday", "Dumbbell Reverse Raise", "Nâng tạ vai sau", ["Vai sau"], 4, "15 mỗi set", {
+        video: videos.dumbbellReverseRaise,
+      }),
       exercise("dumbbell-bench-press", "Dumbbell Bench Press", "Đẩy ngực tạ đơn", ["Ngực"], 3, "15 mỗi set"),
       exercise("dumbbell-incline-bench-press", "Dumbbell Incline Bench Press", "Đẩy ngực dốc lên tạ đơn", ["Ngực trên"], 3, "15 mỗi set"),
       exercise("cable-tricep-extension", "Cable Tricep Extension", "Duỗi tay sau với cáp", ["Tay sau"], 4, "15 mỗi set"),
