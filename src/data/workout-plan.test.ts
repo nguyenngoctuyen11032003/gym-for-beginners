@@ -89,6 +89,46 @@ describe("workoutPlan", () => {
         title: "The PERFECT Leg Extension",
         aspectRatio: "9:16",
       },
+      "leg-curl-tuesday": {
+        embedUrl: "https://www.youtube.com/embed/xdbEG3xGLI8",
+        title: "✅ The PERFECT Seated Leg Curl Tips",
+        aspectRatio: "9:16",
+      },
+      "leg-press-tuesday": {
+        embedUrl: "https://www.youtube.com/embed/EotSw18oR9w",
+        title: "✅ The PERFECT Leg Press",
+        aspectRatio: "9:16",
+      },
+      "v-sit-up-tuesday": {
+        embedUrl: "https://www.youtube.com/embed/6VkyB85fjwo",
+        title: "V-Ups Correct technique #v-ups #crunches #fitness #workout #abs",
+        aspectRatio: "9:16",
+      },
+      "leg-curl-thursday": {
+        embedUrl: "https://www.youtube.com/embed/xdbEG3xGLI8",
+        title: "✅ The PERFECT Seated Leg Curl Tips",
+        aspectRatio: "9:16",
+      },
+      "leg-press-thursday": {
+        embedUrl: "https://www.youtube.com/embed/EotSw18oR9w",
+        title: "✅ The PERFECT Leg Press",
+        aspectRatio: "9:16",
+      },
+      "v-sit-up-thursday": {
+        embedUrl: "https://www.youtube.com/embed/6VkyB85fjwo",
+        title: "V-Ups Correct technique #v-ups #crunches #fitness #workout #abs",
+        aspectRatio: "9:16",
+      },
+      "overhead-press": {
+        embedUrl: "https://www.youtube.com/embed/k6tzKisR3NY",
+        title: "The PERFECT Dumbbell Shoulder Press (DO THIS!)",
+        aspectRatio: "9:16",
+      },
+      "dumbbell-shoulder-press": {
+        embedUrl: "https://www.youtube.com/embed/6v4nrRVySj0",
+        title: "✅ The PERFECT Machine Shoulder Press!",
+        aspectRatio: "9:16",
+      },
       "dumbbell-front-raise-friday": {
         embedUrl: "https://www.youtube.com/embed/9ThlTL25DH8",
         title: "Build 3D Shoulders (Dumbbells Only)",
@@ -102,6 +142,21 @@ describe("workoutPlan", () => {
       "dumbbell-reverse-raise-friday": {
         embedUrl: "https://www.youtube.com/embed/LsT-bR_zxLo",
         title: "The PERFECT Dumbbell Rear Delt Fly (DO THIS!)",
+        aspectRatio: "9:16",
+      },
+      "dumbbell-bench-press": {
+        embedUrl: "https://www.youtube.com/embed/Cj96ZZlmJRU",
+        title: "Dumbell Chest Press Mistakes (DON'T DO THIS!)",
+        aspectRatio: "9:16",
+      },
+      "dumbbell-incline-bench-press": {
+        embedUrl: "https://www.youtube.com/embed/8fXfwG4ftaQ",
+        title: "The PERFECT Incline Dumbbell Chest Press",
+        aspectRatio: "9:16",
+      },
+      "cable-tricep-extension": {
+        embedUrl: "https://www.youtube.com/embed/b_r_LW4HEcM",
+        title: "✅ The PERFECT Overhead DB Tricep Extension",
         aspectRatio: "9:16",
       },
     });

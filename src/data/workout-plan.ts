@@ -61,6 +61,41 @@ const videos = {
     title: "The PERFECT Leg Extension",
     aspectRatio: "9:16",
   },
+  legCurl: {
+    embedUrl: "https://www.youtube.com/embed/xdbEG3xGLI8",
+    title: "✅ The PERFECT Seated Leg Curl Tips",
+    aspectRatio: "9:16",
+  },
+  legPress: {
+    embedUrl: "https://www.youtube.com/embed/EotSw18oR9w",
+    title: "✅ The PERFECT Leg Press",
+    aspectRatio: "9:16",
+  },
+  vSitUp: {
+    embedUrl: "https://www.youtube.com/embed/6VkyB85fjwo",
+    title: "V-Ups Correct technique #v-ups #crunches #fitness #workout #abs",
+    aspectRatio: "9:16",
+  },
+  overheadPress: {
+    embedUrl: "https://www.youtube.com/embed/k6tzKisR3NY",
+    title: "The PERFECT Dumbbell Shoulder Press (DO THIS!)",
+    aspectRatio: "9:16",
+  },
+  dumbbellShoulderPress: {
+    embedUrl: "https://www.youtube.com/embed/6v4nrRVySj0",
+    title: "✅ The PERFECT Machine Shoulder Press!",
+    aspectRatio: "9:16",
+  },
+  dumbbellBenchPress: {
+    embedUrl: "https://www.youtube.com/embed/Cj96ZZlmJRU",
+    title: "Dumbell Chest Press Mistakes (DON'T DO THIS!)",
+    aspectRatio: "9:16",
+  },
+  cableTricepExtension: {
+    embedUrl: "https://www.youtube.com/embed/b_r_LW4HEcM",
+    title: "✅ The PERFECT Overhead DB Tricep Extension",
+    aspectRatio: "9:16",
+  },
 } satisfies Record<string, Exercise["video"]>;
 
 const exercise = (
@@ -143,9 +178,15 @@ export const workoutPlan: WorkoutDay[] = [
       exercise("leg-extension-tuesday", "Leg Extension", "Duỗi chân máy", ["Đùi trước"], 3, "14 / 12 / 10", {
         video: videos.legExtension,
       }),
-      exercise("leg-curl-tuesday", "Leg Curl", "Cuốn chân máy", ["Đùi sau"], 3, "14 / 12 / 10"),
-      exercise("leg-press-tuesday", "Leg Press", "Đạp đùi máy", ["Đùi", "Mông"], 4, "15 mỗi set"),
-      exercise("v-sit-up-tuesday", "V Sit-up", "Gập bụng chữ V", ["Core"], 4, "15 mỗi set"),
+      exercise("leg-curl-tuesday", "Leg Curl", "Cuốn chân máy", ["Đùi sau"], 3, "14 / 12 / 10", {
+        video: videos.legCurl,
+      }),
+      exercise("leg-press-tuesday", "Leg Press", "Đạp đùi máy", ["Đùi", "Mông"], 4, "15 mỗi set", {
+        video: videos.legPress,
+      }),
+      exercise("v-sit-up-tuesday", "V Sit-up", "Gập bụng chữ V", ["Core"], 4, "15 mỗi set", {
+        video: videos.vSitUp,
+      }),
     ],
   },
   {
@@ -187,9 +228,15 @@ export const workoutPlan: WorkoutDay[] = [
       exercise("leg-extension-thursday", "Leg Extension", "Duỗi chân máy", ["Đùi trước"], 3, "14 / 12 / 10", {
         video: videos.legExtension,
       }),
-      exercise("leg-curl-thursday", "Leg Curl", "Cuốn chân máy", ["Đùi sau"], 3, "14 / 12 / 10"),
-      exercise("leg-press-thursday", "Leg Press", "Đạp đùi máy", ["Đùi", "Mông"], 4, "15 mỗi set"),
-      exercise("v-sit-up-thursday", "V Sit-up", "Gập bụng chữ V", ["Core"], 4, "15 mỗi set"),
+      exercise("leg-curl-thursday", "Leg Curl", "Cuốn chân máy", ["Đùi sau"], 3, "14 / 12 / 10", {
+        video: videos.legCurl,
+      }),
+      exercise("leg-press-thursday", "Leg Press", "Đạp đùi máy", ["Đùi", "Mông"], 4, "15 mỗi set", {
+        video: videos.legPress,
+      }),
+      exercise("v-sit-up-thursday", "V Sit-up", "Gập bụng chữ V", ["Core"], 4, "15 mỗi set", {
+        video: videos.vSitUp,
+      }),
     ],
   },
   {
@@ -202,8 +249,12 @@ export const workoutPlan: WorkoutDay[] = [
     description: "Ưu tiên vai ổn định, chuyển động mượt và không khóa khớp.",
     isRestDay: false,
     exercises: [
-      exercise("overhead-press", "Overhead Press (OHP)", "Đẩy vai thanh đòn", ["Vai"], 5, "14 / 12 / 10 / 8 / 6"),
-      exercise("dumbbell-shoulder-press", "Dumbbell Shoulder Press", "Đẩy vai tạ đơn", ["Vai"], 4, "14 / 12 / 10 / 8"),
+      exercise("overhead-press", "Overhead Press (OHP)", "Đẩy vai thanh đòn", ["Vai"], 5, "14 / 12 / 10 / 8 / 6", {
+        video: videos.overheadPress,
+      }),
+      exercise("dumbbell-shoulder-press", "Dumbbell Shoulder Press", "Đẩy vai tạ đơn", ["Vai"], 4, "14 / 12 / 10 / 8", {
+        video: videos.dumbbellShoulderPress,
+      }),
       exercise("dumbbell-front-raise-friday", "Dumbbell Front Raise", "Nâng tạ trước", ["Vai trước"], 4, "15 mỗi set", {
         video: videos.dumbbellFrontRaise,
       }),
@@ -213,9 +264,15 @@ export const workoutPlan: WorkoutDay[] = [
       exercise("dumbbell-reverse-raise-friday", "Dumbbell Reverse Raise", "Nâng tạ vai sau", ["Vai sau"], 4, "15 mỗi set", {
         video: videos.dumbbellReverseRaise,
       }),
-      exercise("dumbbell-bench-press", "Dumbbell Bench Press", "Đẩy ngực tạ đơn", ["Ngực"], 3, "15 mỗi set"),
-      exercise("dumbbell-incline-bench-press", "Dumbbell Incline Bench Press", "Đẩy ngực dốc lên tạ đơn", ["Ngực trên"], 3, "15 mỗi set"),
-      exercise("cable-tricep-extension", "Cable Tricep Extension", "Duỗi tay sau với cáp", ["Tay sau"], 4, "15 mỗi set"),
+      exercise("dumbbell-bench-press", "Dumbbell Bench Press", "Đẩy ngực tạ đơn", ["Ngực"], 3, "15 mỗi set", {
+        video: videos.dumbbellBenchPress,
+      }),
+      exercise("dumbbell-incline-bench-press", "Dumbbell Incline Bench Press", "Đẩy ngực dốc lên tạ đơn", ["Ngực trên"], 3, "15 mỗi set", {
+        video: videos.inclineBenchPress,
+      }),
+      exercise("cable-tricep-extension", "Cable Tricep Extension", "Duỗi tay sau với cáp", ["Tay sau"], 4, "15 mỗi set", {
+        video: videos.cableTricepExtension,
+      }),
     ],
   },
   {
