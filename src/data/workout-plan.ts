@@ -41,6 +41,26 @@ const videos = {
     title: "The Perfect Triceps Pushdown (DO THIS!)",
     aspectRatio: "9:16",
   },
+  squat: {
+    embedUrl: "https://www.youtube.com/embed/iKCJCydYYrE",
+    title: "✅ The PERFECT Smith Machine Squat",
+    aspectRatio: "9:16",
+  },
+  walkingLunges: {
+    embedUrl: "https://www.youtube.com/embed/mJilHWIBWO8",
+    title: "✅ The PERFECT Dumbbell Static Lunge",
+    aspectRatio: "9:16",
+  },
+  hipThrust: {
+    embedUrl: "https://www.youtube.com/embed/CvuVYMFd11g",
+    title: "❌ FIX THIS Hip Thrust Mistake!",
+    aspectRatio: "9:16",
+  },
+  legExtension: {
+    embedUrl: "https://www.youtube.com/embed/uM86QE59Tgc",
+    title: "The PERFECT Leg Extension",
+    aspectRatio: "9:16",
+  },
 } satisfies Record<string, Exercise["video"]>;
 
 const exercise = (
@@ -111,10 +131,18 @@ export const workoutPlan: WorkoutDay[] = [
     description: "Giữ thân người ổn định và ưu tiên biên độ chuyển động an toàn.",
     isRestDay: false,
     exercises: [
-      exercise("squat", "Squat", "Gánh đùi", ["Đùi", "Mông"], 5, "14 / 12 / 10 / 8 / 6"),
-      exercise("walking-lunges-tuesday", "Walking Lunges", "Chùng chân bước tới", ["Đùi", "Mông"], 4, "14 / 12 / 10 / 8 mỗi chân"),
-      exercise("hip-thrust-tuesday", "Hip Thrust", "Đẩy hông", ["Mông"], 4, "14 / 12 / 10 / 8"),
-      exercise("leg-extension-tuesday", "Leg Extension", "Duỗi chân máy", ["Đùi trước"], 3, "14 / 12 / 10"),
+      exercise("squat", "Squat", "Gánh đùi", ["Đùi", "Mông"], 5, "14 / 12 / 10 / 8 / 6", {
+        video: videos.squat,
+      }),
+      exercise("walking-lunges-tuesday", "Walking Lunges", "Chùng chân bước tới", ["Đùi", "Mông"], 4, "14 / 12 / 10 / 8 mỗi chân", {
+        video: videos.walkingLunges,
+      }),
+      exercise("hip-thrust-tuesday", "Hip Thrust", "Đẩy hông", ["Mông"], 4, "14 / 12 / 10 / 8", {
+        video: videos.hipThrust,
+      }),
+      exercise("leg-extension-tuesday", "Leg Extension", "Duỗi chân máy", ["Đùi trước"], 3, "14 / 12 / 10", {
+        video: videos.legExtension,
+      }),
       exercise("leg-curl-tuesday", "Leg Curl", "Cuốn chân máy", ["Đùi sau"], 3, "14 / 12 / 10"),
       exercise("leg-press-tuesday", "Leg Press", "Đạp đùi máy", ["Đùi", "Mông"], 4, "15 mỗi set"),
       exercise("v-sit-up-tuesday", "V Sit-up", "Gập bụng chữ V", ["Core"], 4, "15 mỗi set"),
@@ -150,9 +178,15 @@ export const workoutPlan: WorkoutDay[] = [
     isRestDay: false,
     exercises: [
       exercise("deadlift", "Deadlift", "Kéo tạ", ["Lưng dưới", "Mông", "Đùi sau"], 5, "14 / 12 / 10 / 8 / 6"),
-      exercise("walking-lunges-thursday", "Walking Lunges", "Chùng chân bước tới", ["Đùi", "Mông"], 4, "14 / 12 / 10 / 8 mỗi chân"),
-      exercise("hip-thrust-thursday", "Hip Thrust", "Đẩy hông", ["Mông"], 4, "14 / 12 / 10 / 8"),
-      exercise("leg-extension-thursday", "Leg Extension", "Duỗi chân máy", ["Đùi trước"], 3, "14 / 12 / 10"),
+      exercise("walking-lunges-thursday", "Walking Lunges", "Chùng chân bước tới", ["Đùi", "Mông"], 4, "14 / 12 / 10 / 8 mỗi chân", {
+        video: videos.walkingLunges,
+      }),
+      exercise("hip-thrust-thursday", "Hip Thrust", "Đẩy hông", ["Mông"], 4, "14 / 12 / 10 / 8", {
+        video: videos.hipThrust,
+      }),
+      exercise("leg-extension-thursday", "Leg Extension", "Duỗi chân máy", ["Đùi trước"], 3, "14 / 12 / 10", {
+        video: videos.legExtension,
+      }),
       exercise("leg-curl-thursday", "Leg Curl", "Cuốn chân máy", ["Đùi sau"], 3, "14 / 12 / 10"),
       exercise("leg-press-thursday", "Leg Press", "Đạp đùi máy", ["Đùi", "Mông"], 4, "15 mỗi set"),
       exercise("v-sit-up-thursday", "V Sit-up", "Gập bụng chữ V", ["Core"], 4, "15 mỗi set"),

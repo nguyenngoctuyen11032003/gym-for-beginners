@@ -54,6 +54,41 @@ describe("workoutPlan", () => {
         title: "The Perfect Triceps Pushdown (DO THIS!)",
         aspectRatio: "9:16",
       },
+      squat: {
+        embedUrl: "https://www.youtube.com/embed/iKCJCydYYrE",
+        title: "✅ The PERFECT Smith Machine Squat",
+        aspectRatio: "9:16",
+      },
+      "walking-lunges-tuesday": {
+        embedUrl: "https://www.youtube.com/embed/mJilHWIBWO8",
+        title: "✅ The PERFECT Dumbbell Static Lunge",
+        aspectRatio: "9:16",
+      },
+      "hip-thrust-tuesday": {
+        embedUrl: "https://www.youtube.com/embed/CvuVYMFd11g",
+        title: "❌ FIX THIS Hip Thrust Mistake!",
+        aspectRatio: "9:16",
+      },
+      "leg-extension-tuesday": {
+        embedUrl: "https://www.youtube.com/embed/uM86QE59Tgc",
+        title: "The PERFECT Leg Extension",
+        aspectRatio: "9:16",
+      },
+      "walking-lunges-thursday": {
+        embedUrl: "https://www.youtube.com/embed/mJilHWIBWO8",
+        title: "✅ The PERFECT Dumbbell Static Lunge",
+        aspectRatio: "9:16",
+      },
+      "hip-thrust-thursday": {
+        embedUrl: "https://www.youtube.com/embed/CvuVYMFd11g",
+        title: "❌ FIX THIS Hip Thrust Mistake!",
+        aspectRatio: "9:16",
+      },
+      "leg-extension-thursday": {
+        embedUrl: "https://www.youtube.com/embed/uM86QE59Tgc",
+        title: "The PERFECT Leg Extension",
+        aspectRatio: "9:16",
+      },
       "dumbbell-front-raise-friday": {
         embedUrl: "https://www.youtube.com/embed/9ThlTL25DH8",
         title: "Build 3D Shoulders (Dumbbells Only)",
