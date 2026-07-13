@@ -119,6 +119,46 @@ describe("workoutPlan", () => {
         title: "V-Ups Correct technique #v-ups #crunches #fitness #workout #abs",
         aspectRatio: "9:16",
       },
+      deadlift: {
+        embedUrl: "https://www.youtube.com/embed/xNwpvDuZJ3k",
+        title: "✅ The PERFECT Deadlift (DO THIS!)",
+        aspectRatio: "9:16",
+      },
+      "pull-up": {
+        embedUrl: "https://www.youtube.com/embed/eDP_OOhMTZ4",
+        title: "The Perfect Pull-Up (FIX THESE!)",
+        aspectRatio: "9:16",
+      },
+      "barbell-bent-over-row": {
+        embedUrl: "https://www.youtube.com/embed/phVtqawIgbk",
+        title: "✅ The PERFECT Barbell Row",
+        aspectRatio: "9:16",
+      },
+      "dumbbell-bent-over-row": {
+        embedUrl: "https://www.youtube.com/embed/yHqqGd0tXcw",
+        title: "FIX THESE Dumbbell Row Mistakes!",
+        aspectRatio: "9:16",
+      },
+      "seated-row": {
+        embedUrl: "https://www.youtube.com/embed/qD1WZ5pSuvk",
+        title: "Cable Row Form Tips (DO THIS!)",
+        aspectRatio: "9:16",
+      },
+      "lat-pulldown": {
+        embedUrl: "https://www.youtube.com/embed/bNmvKpJSWKM",
+        title: "✅ The PERFECT Lat Pulldown (DO THIS!)",
+        aspectRatio: "9:16",
+      },
+      "cable-bicep-curl": {
+        embedUrl: "https://www.youtube.com/embed/CrbTqNOlFgE",
+        title: "✅ The PERFECT Cable Bicep Curl",
+        aspectRatio: "9:16",
+      },
+      "back-extension": {
+        embedUrl: "https://www.youtube.com/embed/Wpreb69h2fE",
+        title: "Hyper Extension Variations (KNOW THE DIFFERENCE!)",
+        aspectRatio: "9:16",
+      },
       "overhead-press": {
         embedUrl: "https://www.youtube.com/embed/k6tzKisR3NY",
         title: "The PERFECT Dumbbell Shoulder Press (DO THIS!)",

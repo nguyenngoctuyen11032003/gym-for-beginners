@@ -96,6 +96,46 @@ const videos = {
     title: "✅ The PERFECT Overhead DB Tricep Extension",
     aspectRatio: "9:16",
   },
+  deadlift: {
+    embedUrl: "https://www.youtube.com/embed/xNwpvDuZJ3k",
+    title: "✅ The PERFECT Deadlift (DO THIS!)",
+    aspectRatio: "9:16",
+  },
+  pullUp: {
+    embedUrl: "https://www.youtube.com/embed/eDP_OOhMTZ4",
+    title: "The Perfect Pull-Up (FIX THESE!)",
+    aspectRatio: "9:16",
+  },
+  barbellBentOverRow: {
+    embedUrl: "https://www.youtube.com/embed/phVtqawIgbk",
+    title: "✅ The PERFECT Barbell Row",
+    aspectRatio: "9:16",
+  },
+  dumbbellBentOverRow: {
+    embedUrl: "https://www.youtube.com/embed/yHqqGd0tXcw",
+    title: "FIX THESE Dumbbell Row Mistakes!",
+    aspectRatio: "9:16",
+  },
+  seatedRow: {
+    embedUrl: "https://www.youtube.com/embed/qD1WZ5pSuvk",
+    title: "Cable Row Form Tips (DO THIS!)",
+    aspectRatio: "9:16",
+  },
+  latPulldown: {
+    embedUrl: "https://www.youtube.com/embed/bNmvKpJSWKM",
+    title: "✅ The PERFECT Lat Pulldown (DO THIS!)",
+    aspectRatio: "9:16",
+  },
+  cableBicepCurl: {
+    embedUrl: "https://www.youtube.com/embed/CrbTqNOlFgE",
+    title: "✅ The PERFECT Cable Bicep Curl",
+    aspectRatio: "9:16",
+  },
+  backExtension: {
+    embedUrl: "https://www.youtube.com/embed/Wpreb69h2fE",
+    title: "Hyper Extension Variations (KNOW THE DIFFERENCE!)",
+    aspectRatio: "9:16",
+  },
 } satisfies Record<string, Exercise["video"]>;
 
 const exercise = (
@@ -199,13 +239,27 @@ export const workoutPlan: WorkoutDay[] = [
     description: "Kéo bằng khuỷu tay và giữ cột sống trung lập.",
     isRestDay: false,
     exercises: [
-      exercise("pull-up", "Pull-up", "Hít xà", ["Xô", "Lưng"], 5, "Tối đa"),
-      exercise("barbell-bent-over-row", "Barbell Bent-over Row", "Kéo thanh đòn gập người", ["Lưng"], 4, "14 / 12 / 10 / 8"),
-      exercise("dumbbell-bent-over-row", "Dumbbell Bent-over Row", "Kéo tạ đơn gập người", ["Lưng", "Xô"], 4, "14 / 12 / 10 / 8 mỗi bên"),
-      exercise("seated-row", "Seated Row", "Kéo cáp ngồi", ["Lưng giữa"], 3, "15 mỗi set"),
-      exercise("lat-pulldown", "Lat Pulldown", "Kéo xô", ["Xô"], 3, "15 mỗi set"),
-      exercise("cable-bicep-curl", "Cable Bicep Curl", "Cuốn tay trước cáp", ["Tay trước"], 4, "15 mỗi set"),
-      exercise("back-extension", "Back Extension", "Duỗi lưng", ["Lưng dưới"], 4, "15 mỗi set"),
+      exercise("pull-up", "Pull-up", "Hít xà", ["Xô", "Lưng"], 5, "Tối đa", {
+        video: videos.pullUp,
+      }),
+      exercise("barbell-bent-over-row", "Barbell Bent-over Row", "Kéo thanh đòn gập người", ["Lưng"], 4, "14 / 12 / 10 / 8", {
+        video: videos.barbellBentOverRow,
+      }),
+      exercise("dumbbell-bent-over-row", "Dumbbell Bent-over Row", "Kéo tạ đơn gập người", ["Lưng", "Xô"], 4, "14 / 12 / 10 / 8 mỗi bên", {
+        video: videos.dumbbellBentOverRow,
+      }),
+      exercise("seated-row", "Seated Row", "Kéo cáp ngồi", ["Lưng giữa"], 3, "15 mỗi set", {
+        video: videos.seatedRow,
+      }),
+      exercise("lat-pulldown", "Lat Pulldown", "Kéo xô", ["Xô"], 3, "15 mỗi set", {
+        video: videos.latPulldown,
+      }),
+      exercise("cable-bicep-curl", "Cable Bicep Curl", "Cuốn tay trước cáp", ["Tay trước"], 4, "15 mỗi set", {
+        video: videos.cableBicepCurl,
+      }),
+      exercise("back-extension", "Back Extension", "Duỗi lưng", ["Lưng dưới"], 4, "15 mỗi set", {
+        video: videos.backExtension,
+      }),
     ],
   },
   {
@@ -218,7 +272,9 @@ export const workoutPlan: WorkoutDay[] = [
     description: "Tập trung vào kỹ thuật hip hinge và kiểm soát nhịp hạ tạ.",
     isRestDay: false,
     exercises: [
-      exercise("deadlift", "Deadlift", "Kéo tạ", ["Lưng dưới", "Mông", "Đùi sau"], 5, "14 / 12 / 10 / 8 / 6"),
+      exercise("deadlift", "Deadlift", "Kéo tạ", ["Lưng dưới", "Mông", "Đùi sau"], 5, "14 / 12 / 10 / 8 / 6", {
+        video: videos.deadlift,
+      }),
       exercise("walking-lunges-thursday", "Walking Lunges", "Chùng chân bước tới", ["Đùi", "Mông"], 4, "14 / 12 / 10 / 8 mỗi chân", {
         video: videos.walkingLunges,
       }),
