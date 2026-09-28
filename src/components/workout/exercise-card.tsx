@@ -1,7 +1,8 @@
 "use client";
 
-import { ArrowUpRight, Dumbbell, Video, VideoOff } from "lucide-react";
+import { ArrowRight, CirclePlay, VideoOff } from "lucide-react";
 import { MuscleBadge } from "@/src/components/shared/muscle-badge";
+import { cn } from "@/src/lib/cn";
 import { isValidYouTubeEmbedUrl } from "@/src/lib/video-utils";
 import type { Exercise } from "@/src/types/workout";
 
@@ -17,49 +18,57 @@ export function ExerciseCard({ exercise, index, onSelect }: ExerciseCardProps) {
   return (
     <button
       aria-label={`Xem hướng dẫn ${exercise.name}`}
-      className="premium-card lift-press group flex min-h-[238px] w-full flex-col overflow-hidden rounded-[20px] border border-white/[0.08] bg-card p-4 text-left shadow-[0_10px_34px_rgb(0_0_0/0.18),inset_0_1px_0_rgb(255_255_255/0.035)] transition-[transform,border-color,background-color,box-shadow] duration-200 ease-out hover:-translate-y-0.5 hover:border-white/[0.16] hover:bg-card-elevated hover:shadow-[0_18px_52px_rgb(0_0_0/0.34),0_0_28px_rgb(197_244_103/0.045),inset_0_1px_0_rgb(255_255_255/0.05)] active:translate-y-0 active:scale-[0.985] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:p-5"
+      className="group flex h-full w-full flex-col rounded-2xl border border-border bg-card p-4 text-left transition-[border-color,background-color,transform] duration-200 ease-out hover:border-border-strong hover:bg-card-elevated active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:p-5"
       onClick={() => onSelect(exercise.id)}
       type="button"
     >
-      <div className="flex w-full items-start justify-between gap-4">
-        <div className="flex items-center gap-3">
-          <span className="font-mono text-xs font-medium text-muted-foreground">
-            {String(index).padStart(2, "0")}
-          </span>
-          <span className="flex size-9 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.035] text-muted-foreground shadow-[inset_0_1px_0_rgb(255_255_255/0.04)] transition-[color,background-color,border-color,transform] duration-200 group-hover:-rotate-3 group-hover:border-accent/20 group-hover:bg-accent/[0.055] group-hover:text-accent">
-            <Dumbbell aria-hidden="true" className="size-4" strokeWidth={1.8} />
-          </span>
+      <div className="flex w-full items-start gap-3.5">
+        <span className="tabular flex size-8 shrink-0 items-center justify-center rounded-xl bg-muted text-sm font-semibold text-muted-foreground">
+          {index}
+        </span>
+        <div className="min-w-0 flex-1">
+          <h3 className="text-[17px] font-semibold leading-snug tracking-[-0.02em] text-foreground sm:text-lg">{exercise.name}</h3>
+          {exercise.vietnameseName && <p className="mt-0.5 text-sm text-muted-foreground">{exercise.vietnameseName}</p>}
         </div>
-        <span className={hasVideo ? "inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/[0.08] px-2.5 py-1 text-[11px] font-semibold text-accent shadow-[0_0_16px_rgb(197_244_103/0.06)]" : "inline-flex items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.025] px-2.5 py-1 text-[11px] font-medium text-muted-foreground"}>
-          {hasVideo ? <Video aria-hidden="true" className="size-3" strokeWidth={1.8} /> : <VideoOff aria-hidden="true" className="size-3" strokeWidth={1.8} />}
+        <span
+          className={cn(
+            "inline-flex shrink-0 items-center gap-1 pt-0.5 text-xs font-medium",
+            hasVideo ? "text-accent" : "text-muted-foreground",
+          )}
+        >
+          {hasVideo ? (
+            <CirclePlay aria-hidden="true" className="size-3.5" strokeWidth={1.75} />
+          ) : (
+            <VideoOff aria-hidden="true" className="size-3.5" strokeWidth={1.75} />
+          )}
           {hasVideo ? "Có video" : "Chưa có video"}
         </span>
       </div>
 
-      <div className="mt-5">
-        <h3 className="text-lg font-semibold tracking-[-0.035em] text-foreground sm:text-xl">{exercise.name}</h3>
-        {exercise.vietnameseName && <p className="mt-1 text-sm text-muted-foreground">{exercise.vietnameseName}</p>}
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          {exercise.muscleGroups.map((group) => <MuscleBadge key={group} label={group} />)}
-        </div>
+      <div className="mt-3 flex flex-wrap gap-1.5 pl-[46px]">
+        {exercise.muscleGroups.map((group) => <MuscleBadge key={group} label={group} />)}
       </div>
 
-      <div className="mt-5 grid w-full grid-cols-[88px_minmax(0,1fr)] gap-2 rounded-2xl border border-white/[0.07] bg-black/20 p-3 shadow-[inset_0_1px_0_rgb(255_255_255/0.035)]">
+      <dl className="mt-4 grid w-full grid-cols-[auto_minmax(0,1fr)] gap-x-6 border-t border-border pt-4">
         <div>
-          <p className="text-[11px] font-medium text-muted-foreground">Số set</p>
-          <p className="mt-1 font-mono text-base font-semibold text-foreground">{exercise.sets} set</p>
+          <dt className="text-xs text-muted-foreground">Số set</dt>
+          <dd className="tabular mt-1 text-xl font-semibold tracking-[-0.02em] text-foreground">{exercise.sets} set</dd>
         </div>
-        <div className="border-l border-white/[0.08] pl-3">
-          <p className="text-[11px] font-medium text-muted-foreground">Số rep</p>
-          <p className="mt-1 font-mono text-sm font-semibold leading-5 text-foreground">{exercise.reps}</p>
+        <div className="min-w-0">
+          <dt className="text-xs text-muted-foreground">Số rep</dt>
+          <dd className="tabular mt-1 text-xl font-semibold tracking-[-0.02em] text-foreground">{exercise.reps}</dd>
         </div>
-      </div>
+      </dl>
 
-      {exercise.note && <p className="mt-3 line-clamp-2 text-xs leading-5 text-muted-foreground">{exercise.note}</p>}
+      {exercise.note && <p className="mt-3 line-clamp-2 text-sm leading-6 text-muted-foreground">{exercise.note}</p>}
 
-      <span className="mt-auto flex min-h-11 w-full items-end justify-between pt-4 text-sm font-semibold text-foreground">
+      <span className="mt-auto flex w-full items-center justify-between pt-4 text-sm font-medium text-foreground">
         Xem hướng dẫn
-        <ArrowUpRight aria-hidden="true" className="size-4 text-accent transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={1.8} />
+        <ArrowRight
+          aria-hidden="true"
+          className="size-4 text-muted-foreground transition-[transform,color] duration-200 group-hover:translate-x-0.5 group-hover:text-accent"
+          strokeWidth={1.75}
+        />
       </span>
     </button>
   );

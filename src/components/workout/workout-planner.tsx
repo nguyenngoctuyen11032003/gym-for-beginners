@@ -52,15 +52,23 @@ export function WorkoutPlanner({ plan, initialDayId, initialTodayId }: WorkoutPl
 
   if (!hasMounted) {
     return (
-      <section aria-busy="true" aria-label="Đang xác định lịch hôm nay" className="py-8">
-        <div className="h-[118px] animate-pulse rounded-2xl border border-white/[0.06] bg-card" />
-        <div className="mt-9 h-24 animate-pulse rounded-2xl bg-white/[0.035]" />
+      <section aria-busy="true" aria-label="Đang xác định lịch hôm nay" className="pt-8 sm:pt-10">
+        <div className="flex gap-2 overflow-hidden lg:grid lg:grid-cols-7">
+          {plan.map((day) => (
+            <div key={day.id} className="h-[104px] min-w-[128px] animate-pulse rounded-2xl bg-card lg:min-w-0" />
+          ))}
+        </div>
+        <div className="mt-12 h-8 w-64 max-w-full animate-pulse rounded-xl bg-card" />
+        <div className="mt-6 grid gap-3 lg:grid-cols-2">
+          <div className="h-56 animate-pulse rounded-2xl bg-card" />
+          <div className="hidden h-56 animate-pulse rounded-2xl bg-card lg:block" />
+        </div>
       </section>
     );
   }
 
   return (
-    <section className="pt-7 sm:pt-9">
+    <section className="pt-8 sm:pt-10">
       <WeeklyDaySelector onSelectDay={selectDay} plan={plan} selectedDayId={selectedDay.id} todayId={todayId} />
       <WorkoutDayHeader day={selectedDay} />
       {!selectedDay.isRestDay && (

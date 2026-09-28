@@ -21,3 +21,12 @@ export function isValidYouTubeEmbedUrl(value: string): boolean {
     return false;
   }
 }
+
+export function getYouTubeWatchUrl(embedUrl: string, portrait: boolean): string | null {
+  if (!isValidYouTubeEmbedUrl(embedUrl)) {
+    return null;
+  }
+
+  const id = new URL(embedUrl).pathname.split("/")[2];
+  return portrait ? `https://www.youtube.com/shorts/${id}` : `https://www.youtube.com/watch?v=${id}`;
+}
