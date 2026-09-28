@@ -20,6 +20,5 @@ describe("WeeklyDaySelector", () => {
     expect(within(monday).getByText("Hôm nay")).toBeInTheDocument();
     expect(monday).toHaveAttribute("aria-selected", "false");
     expect(tuesday).toHaveAttribute("aria-selected", "true");
-    expect(tuesday).toHaveClass("selected-orbit");
   });
 });
